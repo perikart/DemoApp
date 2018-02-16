@@ -7,3 +7,10 @@ before_build:
 
 build:
    publish_wap: true
+artifacts:
+  - path: demoapp.zip
+    name: MyApp
+
+  - path: logs
+    name: DemoApp logs
+    type: zip
