@@ -1,6 +1,11 @@
 version: 1.0.{build}
+skip_tags: true
 image: Visual Studio 2017
 configuration: Release
+os: Windows Server 2012
+
+clone_folder: c:\projects\DemoApp
+platform: Any CPU
 
 before_build:
   - nuget restore
@@ -8,10 +13,6 @@ before_build:
 build:
    publish_wap: true
    
-artifacts:
-  - path: demoapp.zip
-    name: MyApp
-
-  - path: logs
-    name: DemoApp logs
-    type: zip
+artifacts: 
+  - path: Deployments\DemoApp_Deployment.zip 
+    name: DemoApp_Deployment
